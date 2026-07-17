@@ -1,7 +1,7 @@
 export { KittenTTS } from './KittenTTS';
 export type { KittenTTSCreateOptions } from './KittenTTS';
 export { KittenTTSResult } from './KittenTTSResult';
-export type { KittenWordTiming } from './KittenWordTiming';
+export type { KittenWordTiming } from '@kittentts/core';
 export {
   KittenTTSError,
   KittenTTSErrorCode,
@@ -24,7 +24,7 @@ export type {
 } from './loader/ModelDownloader';
 export type { KittenPhonemizerProtocol } from './phonemizer/types';
 export { CEPhonemizer } from './phonemizer/CEPhonemizer';
-export { WAVEncoder } from './audio/WAVEncoder';
+export { WAVEncoder } from '@kittentts/core';
 export {
   createBrowserAudioPlayer,
   createExpoAudioPlayer,

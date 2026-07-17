@@ -3,7 +3,7 @@ import {
   errorMessage,
   isKittenTTSError,
 } from '../KittenTTSError';
-import { WAVEncoder } from './WAVEncoder';
+import { WAVEncoder } from '@kittentts/core';
 
 export interface AudioPlayOptions {
   /** Called after the configured player has started playback. */

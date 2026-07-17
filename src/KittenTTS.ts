@@ -12,9 +12,9 @@ import {
 import { KittenTTSResult } from './KittenTTSResult';
 import { KittenModel, speedPrior } from './KittenModel';
 import { KittenVoice } from './KittenVoice';
-import type { KittenWordTiming } from './KittenWordTiming';
+import { splitSentences, type KittenWordTiming } from '@kittentts/core';
 import { TTSEngine } from './engine/TTSEngine';
-import { splitSentences } from './engine/SentenceSplitter';
+
 import { joinTimestamps } from './engine/TimestampJoiner';
 import { loadNPZ, loadNPZData } from './loader/NPZLoader';
 import {

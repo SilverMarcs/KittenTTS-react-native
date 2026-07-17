@@ -84,9 +84,9 @@
     "node": ">=20"
   },
   "peerDependencies": {
+    "expo-audio": ">=1.0.0",
     "react": ">=18.0.0",
     "react-native": ">=0.72.0",
-    "expo-audio": ">=1.0.0",
     "react-native-sound": ">=0.13.0"
   },
   "peerDependenciesMeta": {
@@ -106,9 +106,10 @@
     "typescript": "^5.3.0"
   },
   "dependencies": {
+    "@kittentts/core": "file:../kittentts-core",
     "onnxruntime-react-native": "^1.24.3",
     "onnxruntime-web": "^1.24.3",
-    "react-native-fs": "npm:@dr.pogodin/react-native-fs@^2.38.2",
-    "pako": "^2.1.0"
+    "pako": "^2.1.0",
+    "react-native-fs": "npm:@dr.pogodin/react-native-fs@^2.38.2"
   }
 }

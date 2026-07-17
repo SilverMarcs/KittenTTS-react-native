@@ -1,6 +1,4 @@
-import type { KittenWordTiming } from '../KittenWordTiming';
-import { encode } from './TextCleaner';
-import { preprocess } from './TextPreprocessor';
+import { type KittenWordTiming, encode, preprocess } from '@kittentts/core';
 
 interface PhonemeGroupTiming {
   startTime: number;

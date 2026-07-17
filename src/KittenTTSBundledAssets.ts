@@ -4,7 +4,7 @@ import { KittenModel } from './KittenModel';
 import { CEPhonemizer } from './phonemizer/CEPhonemizer';
 import type { KittenTTSConfig } from './KittenTTSConfig';
 import type { KittenPhonemizerProtocol } from './phonemizer/types';
-import { base64ToUint8Array } from './audio/Base64';
+import { base64ToUint8Array } from '@kittentts/core';
 
 export interface KittenTTSBundledModelFiles {
   onnx: string;
