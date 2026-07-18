@@ -31,3 +31,4 @@ export {
   createRNSoundPlayer,
 } from './audio/AudioOutput';
 export type { AudioPlayer, AudioPlayOptions } from './audio/AudioOutput';
+export { PlaybackQueue } from '@kittentts/core';

@@ -38,3 +38,4 @@ export {
   createRNSoundPlayer,
 } from './audio/AudioOutput.web';
 export type { AudioPlayer, AudioPlayOptions } from './audio/AudioOutput.web';
+export { PlaybackQueue } from '@kittentts/core';
