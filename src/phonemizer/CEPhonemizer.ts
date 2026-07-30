@@ -6,7 +6,7 @@ import {
   KittenTTSError,
   errorMessage,
   isKittenTTSError,
-} from '../KittenTTSError';
+} from '@kittentts/core';
 import type {
   DownloadProgressAsset,
   ProgressHandler,

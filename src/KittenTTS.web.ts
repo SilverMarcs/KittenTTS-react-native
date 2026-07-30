@@ -12,10 +12,9 @@ import {
 import { KittenTTSResult } from './KittenTTSResult';
 import { KittenModel, speedPrior } from './KittenModel';
 import { KittenVoice } from './KittenVoice';
-import type { KittenWordTiming } from './KittenWordTiming';
+import { splitSentences, type KittenWordTiming, joinTimestamps, PlaybackQueue } from '@kittentts/core';
 import { TTSEngine } from './engine/TTSEngine.web';
-import { splitSentences } from './engine/SentenceSplitter';
-import { joinTimestamps } from './engine/TimestampJoiner';
+
 import { loadNPZ, loadNPZData } from './loader/NPZLoader.web';
 import {
   clearModelCache as deleteCachedModel,
@@ -283,7 +282,21 @@ export class KittenTTS {
 
   /** Stop any currently active audio playback. */
   async stopSpeaking(): Promise<void> {
+    if (this.disposePromise) return;
     await this.audioOutput.stop();
+  }
+
+  /**
+   * Create a playback queue.
+   *
+   * @returns A new {@link PlaybackQueue} instance bound to this engine.
+   */
+  createPlaybackQueue(): PlaybackQueue<
+    [KittenVoice?, number?],
+    [AudioPlayOptions?],
+    KittenTTSResult
+  > {
+    return new PlaybackQueue(this);
   }
 
   /** Check if the model files are already cached on disk. */

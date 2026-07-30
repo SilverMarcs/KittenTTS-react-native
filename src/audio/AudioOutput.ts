@@ -5,8 +5,7 @@ import {
   errorMessage,
   isKittenTTSError,
 } from '../KittenTTSError';
-import { uint8ArrayToBase64 } from './Base64';
-import { WAVEncoder } from './WAVEncoder';
+import { uint8ArrayToBase64, WAVEncoder } from '@kittentts/core';
 
 /** Audio player interface that users can provide. */
 export interface AudioPlayer {

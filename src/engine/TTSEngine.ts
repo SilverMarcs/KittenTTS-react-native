@@ -10,8 +10,7 @@ import {
 import { KittenVoice } from '../KittenVoice';
 import { speedPrior } from '../KittenModel';
 import { OUTPUT_SAMPLE_RATE, type ResolvedKittenTTSConfig } from '../KittenTTSConfig';
-import { preprocess } from './TextPreprocessor';
-import * as TextCleaner from './TextCleaner';
+import { preprocess, encode, START_TOKEN_ID, END_TOKEN_ID, PAD_TOKEN_ID } from '@kittentts/core';
 import type { VoiceEmbeddings } from '../loader/NPZLoader';
 
 export interface TTSEngineOutput {
@@ -122,7 +121,7 @@ export class TTSEngine {
     }
 
     try {
-      const tokens = TextCleaner.encode(phonemes);
+      const tokens = encode(phonemes);
       const chunks = this.splitIntoChunks(tokens);
       const effectiveSpeed = speed * speedPrior(this.config.model, voice);
       const singleChunk = chunks.length === 1;
@@ -294,10 +293,10 @@ export class TTSEngine {
     for (let i = 0; i < body.length; i += maxBody) {
       const slice = body.slice(i, Math.min(i + maxBody, body.length));
       chunks.push([
-        TextCleaner.START_TOKEN_ID,
+        START_TOKEN_ID,
         ...slice,
-        TextCleaner.END_TOKEN_ID,
-        TextCleaner.PAD_TOKEN_ID,
+        END_TOKEN_ID,
+        PAD_TOKEN_ID,
       ]);
     }
     return chunks;

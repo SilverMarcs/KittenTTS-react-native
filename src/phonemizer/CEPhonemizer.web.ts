@@ -5,7 +5,7 @@ import {
   KittenTTSError,
   errorMessage,
   isKittenTTSError,
-} from '../KittenTTSError';
+} from '@kittentts/core';
 import type {
   DownloadProgressAsset,
   ProgressHandler,
@@ -14,7 +14,7 @@ import {
   type AssetStorage,
   defaultAssetStorage,
   isNodeRuntime,
-} from '../storage/AssetStorage';
+} from '@kittentts/core';
 
 const DEFAULT_RULES_URL =
   'https://raw.githubusercontent.com/espeak-ng/espeak-ng/59eb19938f12e30881c81d86ce4a7de25414c9f4/dictsource/en_rules';

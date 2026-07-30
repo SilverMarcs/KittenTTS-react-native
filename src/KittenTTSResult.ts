@@ -1,7 +1,5 @@
 import { KittenVoice } from './KittenVoice';
-import { uint8ArrayToBase64 } from './audio/Base64';
-import { WAVEncoder } from './audio/WAVEncoder';
-import type { KittenWordTiming } from './KittenWordTiming';
+import { uint8ArrayToBase64, WAVEncoder, type KittenWordTiming } from '@kittentts/core';
 
 /**
  * The result of a KittenTTS speech-synthesis call.
